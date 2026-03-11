@@ -1,0 +1,15 @@
+---
+description: Always push changes to the email-template GitHub repo after edits
+alwaysApply: true
+---
+
+# Push Changes to GitHub
+
+After making any edits to this project, always push the changes to:
+
+**https://github.com/BethelHills/email-template-replication-trial-2.git**
+
+Workflow:
+1. Stage changes: `git add .`
+2. Commit with a descriptive message: `git commit -m "..."`
+3. Push: `git push origin main`
