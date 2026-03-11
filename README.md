@@ -7,13 +7,19 @@
 ./open-preview.sh
 ```
 
-**Option 2: Manual**
+**Option 2: Open file directly**
+Double-click `index.html` in Finder, or run:
+```bash
+open index.html
+```
+
+**Option 3: Local server**
 ```bash
 python3 -m http.server 8888
 ```
-Then open http://localhost:8888/ in your browser.
+Then visit http://localhost:8888/ in your browser.
 
-**Option 3: GitHub Pages** (if enabled)
+**Option 4: GitHub Pages** (if enabled)
 https://bethelhills.github.io/email-template-replication-trial-2/
 
 ## Email deliverability (avoiding spam folder)

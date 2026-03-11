@@ -2,14 +2,17 @@
 # Open the email template in your browser
 cd "$(dirname "$0")"
 
-# Start server in background if not already running
-if ! lsof -i :8888 >/dev/null 2>&1; then
+# Try opening file directly first (works without server)
+if open -a "Safari" "index.html" 2>/dev/null || \
+   open -a "Google Chrome" "index.html" 2>/dev/null || \
+   open -a "Firefox" "index.html" 2>/dev/null || \
+   open "index.html" 2>/dev/null; then
+  echo "Template opened in browser."
+  echo "Logo loads from GitHub URL."
+else
+  # Fallback: start server and open
   python3 -m http.server 8888 &
   sleep 2
+  open "http://localhost:8888/"
+  echo "Template at http://localhost:8888/"
 fi
-
-# Open in default browser
-open "http://localhost:8888/"
-
-echo "Template opened at http://localhost:8888/"
-echo "Press Ctrl+C in the terminal to stop the server when done."
